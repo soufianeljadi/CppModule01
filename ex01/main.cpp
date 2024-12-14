@@ -1,18 +1,17 @@
 
 #include "Zombie.hpp"
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
-void f(){ system("leaks zombie");}
 
 int main()
 {
-    Zombie z("ben 10");
-    randomChump("foo");
-
-    Zombie *r = newZombie("alok");
-    r->announce();
+    Zombie *z =zombieHorde(10,"salam");
+    int i = 0;
+    while(i < 9)
+    {
+        z[i].announce();
+        i++;
+    }
     
-    delete r;
 }

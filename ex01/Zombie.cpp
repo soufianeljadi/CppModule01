@@ -1,11 +1,11 @@
  
 #include "Zombie.hpp" 
  
-// Zombie:: Zombie()
-// {
-//     this->_name = "default";
-//     std::cout << this->_name<< " object created"<< std::endl;
-// }
+Zombie:: Zombie()
+{
+    this->_name = "default";
+    std::cout << this->_name<< " object created"<< std::endl;
+}
 
 Zombie:: Zombie(std::string _name)
 {

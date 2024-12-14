@@ -4,7 +4,6 @@
 Zombie	*newZombie(std::string name);
 void	randomChump(std::string name);
 
-void f(){ system("leaks zombie");}
 
 int main()
 {
