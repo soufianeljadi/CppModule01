@@ -12,9 +12,9 @@ class  Zombie
     public:
         Zombie();
         Zombie(std:: string _name);
-        void announce( void );
         ~Zombie();
+        void setName(std::string _name);
+        void announce( void );
 };
-
 
 #endif

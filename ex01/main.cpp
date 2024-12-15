@@ -3,15 +3,16 @@
 
 Zombie* zombieHorde( int N, std::string name );
 
+void f(){system("leaks zombie");}
 
 int main()
 {
-    Zombie *z =zombieHorde(10,"salam");
-    int i = 0;
-    while(i < 9)
-    {
+    atexit(f);
+    Zombie *z =zombieHorde(9,"zombie ");
+    int i = -1;
+
+    while(++i < 9)
         z[i].announce();
-        i++;
-    }
-    
+        
+    delete[] z;
 }

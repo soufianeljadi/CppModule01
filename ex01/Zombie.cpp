@@ -3,22 +3,27 @@
  
 Zombie:: Zombie()
 {
-    this->_name = "default";
-    std::cout << this->_name<< " object created"<< std::endl;
+    this->_name = "(default)";
+    std::cout << this->_name<< " Zombie object created"<< std::endl;
 }
 
 Zombie:: Zombie(std::string _name)
 {
     this->_name = _name;
-    std::cout << this->_name<< " object created"<< std::endl;
+    std::cout << this->_name<< " Zombie object created"<< std::endl;
 }
 
 Zombie::~ Zombie()
 {
-    std::cout << this->_name << " object destroyed"<< std::endl;
+    std::cout << this->_name << " Zombie object destroyed"<< std::endl;
 }
 
 void	Zombie::announce()
 {
 	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
 }
