@@ -1,4 +1,8 @@
 
+#ifndef HUMANB_HPP
+
+# define HUMANB_HPP
+
 #include "Weapon.hpp"
 
 class HumanB
@@ -8,7 +12,8 @@ class HumanB
         Weapon &_weapon;
     public:
         HumanB(std::string name, Weapon &weapon);
-        void HumanB::attack();
+        void attack();
         ~HumanB();
 };
 
+#endif
