@@ -1,14 +1,14 @@
 CC = g++
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = violence
+NAME = file
 
 all: $(NAME)
 
-$(NAME): $(OBJ) Weapon.hpp HumanA.hpp HumanB.hpp
+$(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
