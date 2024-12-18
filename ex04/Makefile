@@ -1,4 +1,4 @@
-CC = g++
+
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf
@@ -9,7 +9,7 @@ NAME = file
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
