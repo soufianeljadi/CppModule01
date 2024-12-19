@@ -1,5 +1,5 @@
 
-CC = g++
+CC = c++
 SRC = main.cpp Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf

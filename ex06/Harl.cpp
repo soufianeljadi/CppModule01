@@ -38,25 +38,26 @@ void Harl::error( void )
 void Harl::complain( std::string level )
 {
     const std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-    int levelIndex = -1;
 
-    for (int i = 0; i < 4; ++i) {
-        if (levels[i] == level) {
+    int levelIndex = 0;
+
+    for (int i = 0; i < 4; ++i) 
+    {
+        if (levels[i] == level) 
+        {
             levelIndex = i;
-            break;
+            break ;
         }
     }
 
-    switch (levelIndex) {
+    switch (levelIndex) 
+    {
         case 0: 
             debug();
-            // Fall through to INFO, WARNING, ERROR
         case 1: 
             info();
-            // Fall through to WARNING, ERROR
         case 2:
             warning();
-            // Fall through to ERROR
         case 3:
             error();
             break;
