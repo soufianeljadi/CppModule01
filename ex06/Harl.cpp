@@ -41,7 +41,7 @@ void Harl::complain( std::string level )
 
     int levelIndex = 0;
 
-    for (int i = 0; i < 4; ++i) 
+    for (int i = 0; i < 4; i++) 
     {
         if (levels[i] == level) 
         {
@@ -49,10 +49,9 @@ void Harl::complain( std::string level )
             break ;
         }
     }
-
     switch (levelIndex) 
     {
-        case 0: 
+         case 0: 
             debug();
         case 1: 
             info();

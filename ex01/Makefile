@@ -1,4 +1,4 @@
-CC = c++
+CC = g++
 SRC = main.cpp zombieHorde.cpp Zombie.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf
