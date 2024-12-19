@@ -1,15 +1,15 @@
-
+CC = g++
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98  -pedantic
 
 NAME = file
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

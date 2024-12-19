@@ -3,94 +3,61 @@
 #include <fstream>
 
 using std::cin;
+using std::cerr;
 using std::cout;
 using std::string;
 using std::endl;
+using std::ofstream;
+using std::ifstream;
 
 int main(int ac, char **av)
 {
     if(ac != 4)
     {
-        cout << "invalid argument number"<< endl;
-        return(0);
+        cout << "Invalid argument number"<< endl;
+        return(1);
     }
     string _filename = av[1];
     string _string1 = av[2]; 
     string _string2 = av[3]; 
-
-
-    std::ofstream fout;
-
+    string output_filename = _filename + ".replace";
     string line;
 
-	std::ifstream in_file;
-	std::ofstream out_file;
+    if (_filename.empty() || _string1.empty() || _string2.empty()) 
+    {
+        cerr << "Filename, s1, and s2 cannot be empty" << endl;
+        return 1;
+    }
 
-	string fname;
+    ifstream infile(_filename.c_str());
+    if (!infile.is_open()) 
+    {
+        cerr << "Could not open the file" << _filename << endl;
+        return 1;
+    }
 
-	fname = av[1];
+    ofstream outfile(output_filename.c_str());
+    if (!outfile.is_open()) 
+    {
+        cerr << "Could not create the file" << output_filename << endl;
+        infile.close();
+        return 1;
+    }
 
-	in_file.open(fname);
-	if (in_file.is_open() == false) {
-		std::cout << "Error: could not open file" << std::endl;
-		exit(1);
-	}
+    while (std::getline(infile, line)) 
+    {
+        size_t pos = 0;
+        while ((pos = line.find(_string1, pos)) != string::npos) 
+        {
+            line.erase(pos, _string1.length());
+            line.insert(pos, _string2);
+            pos += _string2.length();
+        }
+        outfile << line << "\n";
+    }
 
-	out_file.open(fname + ".replace");
-	if (out_file.is_open() == false) {
-		std::cout << "Error: could not open file" << std::endl;
-		exit(1);
-	}
-
-    // by default ios::out mode, automatically deletes
-    // the content of file. To append the content, open in ios:app
-    // fout.open("sample.txt", ios::app)
-
-    // fout.open(_filename);
-    // Execute a loop If file successfully opened
-    // while (fout) {
-
-    //     // Read a Line from standard input
-    //     getline(cin, line);
-
-    //     // Press -1 to exit
-    //     if (line == "-1")
-    //         break;
-
-    //     // Write line in file
-    //     fout << line << endl;
-    // }
-
+    infile.close();
+    outfile.close();
+    cout << "File processing complete. Output written to " << output_filename << endl;
     return(0);
 }
-
-// #include <iostream>
-// #include <sstream>
-// #include<string>
-// using namespace std;
-
-// int countWords(string str)
-// {
-// 	// Breaking input into word 
-// 	// using string stream
-  
-// 	// Used for breaking words
-// 	stringstream s(str); 
-  
-// 	// To store individual words
-// 	string word; 
-
-// 	int count = 0;
-// 	while (s >> word)
-// 		count++;
-// 	return count;
-// }
-
-// // Driver code
-// int main()
-// {
-// 	string s = "geeks for geeks geeks "
-// 			   "contribution placements";
-// 	cout << " Number of words are: " << countWords(s);
-// 	return 0;
-// }
