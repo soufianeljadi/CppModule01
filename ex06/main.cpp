@@ -6,7 +6,7 @@ int main()
     Harl soufiane;
 
     // soufiane.complain("DEBUG");
-    soufiane.complain("WARNING");
+    soufiane.complain("DEBUG");
     soufiane.complain("ALERT");
 
 }
