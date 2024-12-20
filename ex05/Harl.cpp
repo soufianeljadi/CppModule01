@@ -1,7 +1,7 @@
 
 #include "Harl.hpp"
 
-Harl:: Harl(/* args */)
+Harl:: Harl()
 {
 }
 
@@ -39,7 +39,6 @@ void Harl::complain( std::string level )
 {
     void (Harl::*ptr_complain[])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-    
     int i = 0;
 
     while(i < 4)
