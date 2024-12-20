@@ -40,12 +40,16 @@ void Harl::complain( std::string level )
     void (Harl::*ptr_complain[])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
     
-    for (size_t i = 0; i < 4; i++) 
+    int i = 0;
+
+    while(i < 4)
     {
-        if (levels[i] == level) {
+        if (levels[i] == level) 
+        {
             (this->*ptr_complain[i])();
             return ; 
         }
+        i++;
     }
     std::cerr << "[ UNRECOGNIZED ]"<<std::endl;
     std::cerr  << level << " is an unknown level!" << std::endl<< std::endl;
