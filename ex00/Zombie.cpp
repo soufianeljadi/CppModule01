@@ -1,9 +1,9 @@
  
 #include "Zombie.hpp" 
  
-Zombie:: Zombie(std::string _name)
+Zombie:: Zombie(std::string name)
 {
-    this->_name = _name;
+    this->_name = name;
     std::cout << this->_name<< " object created"<< std::endl;
 }
 

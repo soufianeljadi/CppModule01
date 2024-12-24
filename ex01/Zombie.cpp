@@ -1,21 +1,21 @@
  
 #include "Zombie.hpp" 
  
-Zombie:: Zombie()
-{
-    this->_name = "(default)";
-    std::cout << this->_name<< " Zombie object created"<< std::endl;
-}
-
 Zombie:: Zombie(std::string _name)
 {
     this->_name = _name;
-    std::cout << this->_name<< " Zombie object created"<< std::endl;
+    std::cout << this->_name<< " zombie object created"<< std::endl;
+}
+
+Zombie:: Zombie()
+{
+    this->_name = "(null)";
+    std::cout << this->_name<< " zombie object created"<< std::endl;
 }
 
 Zombie::~ Zombie()
 {
-    std::cout << this->_name << " Zombie object destroyed"<< std::endl;
+    std::cout << this->_name << " zombie object destroyed"<< std::endl;
 }
 
 void	Zombie::announce()
